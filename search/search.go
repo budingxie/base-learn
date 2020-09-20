@@ -26,15 +26,18 @@ func Run(searchTerm string) {
 
 	// 为每个数据源（data.json中每一个对象）启动一个goroutine来查找结果
 	for _, feed := range feeds {
-		// 获取一个匹配器用于查找
+		// 根据数据源解析的site字段，获取一个匹配器用于查找
 		matcher, exists := matchers[feed.Type]
 		if !exists {
+			// 没有获取到，采用默认的
 			matcher = matchers["default"]
 		}
 
 		// 启动一个goroutine来执行搜索
 		go func(matcher Matcher, feed *Feed) {
+			// 根据解析器，数据源对象，搜索字段，查找到结果添加到results中
 			Match(matcher, feed, searchTerm, results)
+			// 减1
 			waitGroup.Done()
 		}(matcher, feed)
 	}
