@@ -9,4 +9,6 @@ func main() {
 	// 2.数组使用
 	array.UseArray()
 
+	// 3.数组复制
+	array.UseStrArr()
 }
