@@ -71,3 +71,40 @@ func UseStrArr() {
 	a2[0] = "dd"
 	fmt.Printf("%v\n%v", a1, a2)
 }
+
+func AssignArr() {
+	// 1.申明第一个包含4个元素的字符串数组
+	//	var a1 [4]string
+
+	// 2.申明第二个包含5个元素的字符串数组
+	// 2.1使用颜色初始化数组
+	//	a2 := [5] string{"Red", "Blue", "Green", "Yellow", "Pink"}
+
+	// 3.将a2复制给a1
+	//	a1 = a2
+	//报错
+	// compiler Error:
+	// cannot use a2 (type [5]string) as type [4]string in assignment
+}
+
+func UsePoint() {
+	// 1.申明第一个包含3个元素的指向字符串的指针数组
+	var a1 [3]*string
+
+	// 2.申明第二个包含3个元素的指向字符串的指针数组
+	// 2.1使用字符串指针初始胡这个数组
+	a2 := [3]*string{new(string), new(string), new(string)}
+
+	// 3.使用颜色为每一个元素赋值
+	*a2[0] = "Red"
+	*a2[1] = "Blue"
+	*a2[2] = "Green"
+
+	// 4.将a2复制给a1
+	a1 = a2
+	fmt.Printf("%v,%v\n", a1, a2)
+
+	// 5.修改任意数组中的值
+	*a1[0] = "Yellow"
+	fmt.Printf("a1[0]=%v, a2[0]=%v\n", *a1[0], *a2[0])
+}

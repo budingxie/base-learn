@@ -11,4 +11,10 @@ func main() {
 
 	// 3.数组复制
 	array.UseStrArr()
+
+	// 4.错误复制
+	array.AssignArr()
+
+	// 5.指针数组复制
+	array.UsePoint()
 }
