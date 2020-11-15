@@ -1,6 +1,9 @@
 package main
 
-import "base-learn/chart02/cus"
+import (
+	"base-learn/chart02/cus"
+	"fmt"
+)
 
 func main() {
 
@@ -22,4 +25,14 @@ func main() {
 	bill := &cus.Man{}
 	// golang底层优化了 //(*bill).Notify()
 	bill.Notify()
+
+	// 5.测试数组是否 是引用类型
+	b := [2]int{1, 2}
+	fmt.Println(b)
+	test(b)
+	fmt.Println(b)
+}
+
+func test(b [2]int) {
+	b[0] = 5
 }
