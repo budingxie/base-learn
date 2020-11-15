@@ -1,6 +1,9 @@
 package main
 
-import "base-learn/chart01/array"
+import (
+	"base-learn/chart01/array"
+	"base-learn/chart01/pymap"
+)
 
 func main() {
 	// 1.数组申明
@@ -32,4 +35,10 @@ func main() {
 
 	// 10.遍历切片
 	array.IterationSlice()
+
+	// 11.map创建
+	pymap.CreateMap()
+
+	// 12.使用map
+	pymap.UseMap()
 }
