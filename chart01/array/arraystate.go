@@ -242,4 +242,7 @@ func IterationSlice() {
 
 	s2 = append(s2, 10)
 	fmt.Printf("s2:%v\n", s2)
+
+	s0 := make([]int, 1, 3)
+	fmt.Printf("s0:%v\nlen:%d\ncap:%d\n", s0, len(s0), cap(s0))
 }

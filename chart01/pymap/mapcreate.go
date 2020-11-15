@@ -55,6 +55,7 @@ func UseMap() {
 	for key, value := range col {
 		fmt.Printf("Key: %s  Value: %s\n", key, value)
 	}
+	fmt.Printf("len: %d", len(col))
 
 	// 7.在函数之间传递映射，并不会制造该映射的一个副本。
 }
